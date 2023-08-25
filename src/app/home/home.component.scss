@@ -1,0 +1,189 @@
+.cv-foto {
+    background-image: url("./../../assets/cv_foto_duo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-position: 0px -5px;
+    border: 11px solid palegoldenrod;
+}
+
+.accent {
+    color: #BE3455;
+    text-shadow: 5px 5px yellow;
+    font-size: 40px;
+}
+
+.moving-thingy {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -999999;
+    overflow: hidden;
+    box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+}
+
+.first1 {
+    animation: first linear 11s infinite alternate;
+}
+
+.second2 {
+    animation: second linear 21s infinite alternate;
+}
+
+.third3 {
+    animation: third linear 9s infinite alternate;
+}
+
+.fourth4 {
+    animation: fourth linear 14s infinite alternate;
+}
+
+.fifth5 {
+    animation: fifth linear 17s infinite alternate;
+}
+
+.sixth6 {
+    animation: sixth linear 16s infinite alternate;
+}
+
+
+@keyframes first {
+    0% {
+        background-color: #BE3455;
+        right: 50vw;
+        bottom: 0;
+    }
+
+    50% {
+        background-color: yellow;
+        right: 50vw;
+        bottom: 70vh;
+    }
+
+
+    100% {
+        background-color: yellow;
+        opacity: 0.3;
+        right: 50vw;
+        bottom: 0;
+    }
+}
+
+
+@keyframes second {
+    0% {
+        background-color: #BE3455;
+        right: 30vw;
+        bottom: 0;
+    }
+
+    50% {
+        background-color: #BE3455;
+        right: 30vw;
+        bottom: 70vh;
+    }
+
+    100% {
+        background-color: yellow;
+        opacity: 0.1;
+        right: 30vw;
+        bottom: 0;
+    }
+}
+
+@keyframes third {
+    0% {
+        background-color: #BE3455;
+        opacity: 0.4;
+        right: 10vw;
+        bottom: 0;
+    }
+
+    50% {
+        background-color: yellow;
+        right: 10vw;
+        bottom: 65vh;
+    }
+
+    100% {
+        background-color: yellow;
+        right: 10vw;
+        bottom: 0;
+    }
+}
+
+@keyframes fourth {
+    0% {
+        background-color: #BE3455;
+        right: 25vw;
+        bottom: 0;
+    }
+
+    50% {
+        background-color: #BE3455;
+        opacity: 0.7;
+        right: 25vw;
+        bottom: 70vh;
+    }
+
+
+    100% {
+        background-color: orange;
+        right: 25vw;
+        bottom: 0;
+    }
+}
+
+
+@keyframes fifth {
+    0% {
+        background-color: #BE3455;
+        right: 43vw;
+        bottom: 0;
+    }
+
+    50% {
+        background-color: yellow;
+        right: 43vw;
+        bottom: 60vh;
+    }
+
+    100% {
+        background-color: yellow;
+        opacity: 0.4;
+        right: 43vw;
+        bottom: 0;
+    }
+}
+
+@keyframes sixth {
+    0% {
+        background-color: #BE3455;
+        opacity: 0.1;
+        right: 3vw;
+        bottom: 0;
+    }
+
+    50% {
+        background-color: yellow;
+        right: 3vw;
+        bottom: 70vh;
+    }
+
+    100% {
+        background-color: #BE3455;
+        right: 3vw;
+        bottom: 0;
+    }
+}

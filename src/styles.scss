@@ -1,1 +1,186 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$viva-magenta-palette: (
+  50: #ffe0ff,
+  100: #ffb3ff,
+  200: #ff80ff,
+  300: #ff4dff,
+  400: #ff26ff,
+  500: #ff00ff,
+  600: #ff00ff,
+  700: #ff00ff,
+  800: #ff00ff,
+  900: #ff00ff,
+  A100: #ffffff,
+  A200: #fff2ff,
+  A400: #ffbfff,
+  A700: #ffa6ff,
+  contrast: (50: #f7f8ef,
+    100: #edeee6,
+    200: #e1e2da,
+    300: #cecfc7,
+    400: #a9aaa2,
+    500: white,
+    600: #61625b,
+    700: #4e4f48,
+    800: #30312b,
+    900: #101108,
+    A100: #edeee6,
+    A200: #e1e2da,
+    A400: #a9aaa2,
+    A700: #4e4f48,
+  )
+);
+
+$yellow-palette: (
+  50: #e0ffff,
+  100: #b3ffff,
+  200: #80ffff,
+  300: #4dffff,
+  400: #26ffff,
+  500: #00ffff,
+  600: #00ffff,
+  700: #00ffff,
+  800: #00ffff,
+  900: #00ffff,
+  A100: #ffffff,
+  A200: #f2ffff,
+  A400: #bfffff,
+  A700: #a6ffff,
+  contrast: (50: #f7f8ef,
+    100: #edeee6,
+    200: #e1e2da,
+    300: #cecfc7,
+    400: #a9aaa2,
+    500: white,
+    600: #61625b,
+    700: #4e4f48,
+    800: #30312b,
+    900: #101108,
+    A100: #edeee6,
+    A200: #e1e2da,
+    A400: #a9aaa2,
+    A700: #4e4f48,
+  )
+);
+
+$tangerine-palette: (
+  50: #e0ffff,
+  100: #b3ffff,
+  200: #80ffff,
+  300: #4dffff,
+  400: #26ffff,
+  500: #00ffff,
+  600: #00ffff,
+  700: #00ffff,
+  800: #00ffff,
+  900: #00ffff,
+  A100: #ffffff,
+  A200: #f2ffff,
+  A400: #bfffff,
+  A700: #a6ffff,
+  contrast: (50: #f7f8ef,
+    100: #edeee6,
+    200: #e1e2da,
+    300: #cecfc7,
+    400: #a9aaa2,
+    500: white,
+    600: #61625b,
+    700: #4e4f48,
+    800: #30312b,
+    900: #101108,
+    A100: #edeee6,
+    A200: #e1e2da,
+    A400: #a9aaa2,
+    A700: #4e4f48,
+  )
+);
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$resume-primary: mat.define-palette($viva-magenta-palette);
+$resume-accent: mat.define-palette($yellow-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$resume-warn: mat.define-palette($tangerine-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$resume-theme: mat.define-light-theme((color: (primary: $resume-primary,
+        accent: $resume-accent,
+        warn: $resume-warn,
+      )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($resume-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
+  background-color: #0ff;
+}
+
+h2,
+nav a {
+  font-family: "Archivo Black", sans-serif;
+  color: white;
+}
+
+.menu-mobile {
+  display: none;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #BE3455;
+  text-shadow: 5px 5px yellow;
+  font-size: 18px;
+}
+
+.menu-desktop {
+  display: none;
+
+  @media (min-width: 601px) {
+    display: block;
+    padding: 20px 0;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.bg-logo {
+  position: absolute;
+  right: 0;
+  z-index: -9999999;
+}
