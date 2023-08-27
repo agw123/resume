@@ -13,6 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import { MenuComponent } from './menu/menu.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import {MatMenuModule} from '@angular/material/menu';
     HomeComponent,
     AboutComponent,
     ProjectsComponent,
-    ContactsComponent
+    ContactsComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
