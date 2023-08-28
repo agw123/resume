@@ -1,0 +1,59 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .menu-links a {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 15px;
+        text-decoration: none;
+    }
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.hamburger-menu.active {
+    position: absolute;
+    top: 56px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    left: 0;
+
+    span {
+        padding: 20px;
+    }
+}
+
+.contacts-icons {
+    display: block;
+    margin-bottom: 100px;
+    padding: 20px 0;
+
+    mat-icon {
+        margin: 0 10px;
+    }
+}
+
+.menu-mobile {
+    display: none;
+
+    @media (max-width: 600px) {
+        display: block;
+    }
+}
+
+.menu-desktop {
+    display: none;
+
+    @media (min-width: 601px) {
+        display: block;
+        margin-bottom: 100px;
+        padding: 20px 0;
+    }
+}

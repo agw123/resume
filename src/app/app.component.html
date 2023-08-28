@@ -1,30 +1,4 @@
-<div class="container menu-desktop">
-  <div class="row">
-    <div class="col-10 ml-auto text-right">
-      <nav>
-        <a routerLink="/home">Home</a>
-        <a routerLink="/about">About</a>
-        <a routerLink="/projects">Projects</a>
-        <a routerLink="/contact">Contact</a>
-      </nav>
-    </div>
-  </div>
-</div>
-<p class="menu-mobile">
-  <mat-toolbar color="primary">
-    <button (click)="toggleMenu()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <div class="hamburger-menu" [ngClass]="{'active': menuOpen}">
-      <span routerLink="/home">Home</span>
-      <span routerLink="/about">About</span>
-      <span routerLink="/projects">Projects</span>
-      <span routerLink="/contact">Contact</span>
-    </div>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
-</p>
+<app-menu></app-menu>
 <router-outlet></router-outlet>
+<img class="theme-switcher" (click)="themeSwitcher()" src="{{iconSrc}}" alt="theme-switcher">
 <footer>Copyright Agata Wisniewska 2023</footer>

@@ -1,5 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+@use 'sass:map';
 @use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
@@ -8,7 +9,7 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-$viva-magenta-palette: (
+$fucsia-palette: (
   50: #ffe0ff,
   100: #ffb3ff,
   200: #ff80ff,
@@ -72,7 +73,7 @@ $yellow-palette: (
   )
 );
 
-$tangerine-palette: (
+$tiffany-palette: (
   50: #e0ffff,
   100: #b3ffff,
   200: #80ffff,
@@ -104,30 +105,164 @@ $tangerine-palette: (
   )
 );
 
+$grey-palette: (
+  50: #f7f8ef,
+  100: #edeee6,
+  200: #e1e2da,
+  300: #cecfc7,
+  400: #a9aaa2,
+  500: #61625b,
+  600: #61625b,
+  700: #4e4f48,
+  800: #30312b,
+  900: #4e4f48,
+  A100: #4e4f48,
+  A200: #e1e2da,
+  A400: #a9aaa2,
+  A700: #4e4f48,
+  contrast: (50: #4e4f48,
+    100: #4e4f48,
+    200: #4e4f48,
+    300: #4e4f48,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #edeee6,
+    900: #ffffff,
+    A100: #4e4f48,
+    A200: #4e4f48,
+    A400: #ffffff,
+    A700: #ffffff,
+  )
+);
 
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$resume-primary: mat.define-palette($viva-magenta-palette);
+$resume-primary: mat.define-palette($fucsia-palette);
 $resume-accent: mat.define-palette($yellow-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$resume-warn: mat.define-palette($tangerine-palette);
+$resume-warn: mat.define-palette($tiffany-palette);
+
+$calm-primary: mat.define-palette($grey-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$resume-theme: mat.define-light-theme((color: (primary: $resume-primary,
+$joy-theme: mat.define-light-theme((color: (primary: $resume-primary,
         accent: $resume-accent,
-        warn: $resume-warn,
-      )));
+        warn: $resume-warn )));
+
+$calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
+        accent: $calm-primary,
+        warn: $resume-warn )));
+
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($resume-theme);
+
+.theme-joy {
+  @include mat.all-component-themes($joy-theme);
+}
+
+.theme-calm {
+  @include mat.all-component-themes($calm-theme);
+}
 
 /* You can add global styles to this file, and also import other style files */
+
+.bg-joy {
+  background: mat.get-color-from-palette($tiffany-palette, 500);
+  color: mat.get-color-from-palette($tiffany-palette, A100);
+
+  a {
+    color: white;
+  }
+
+  nav {
+    a:hover,
+    a:focus,
+    a:active {
+      color: #BE3455;
+      text-shadow: 5px 5px yellow;
+      font-size: 18px;
+    }
+  }
+
+  .baloon {
+    box-shadow:
+      inset 0 0 50px #fff,
+      inset 20px 0 80px #f0f,
+      inset -20px 0 80px #0ff,
+      inset 20px 0 300px #f0f,
+      inset -20px 0 300px #0ff,
+      0 0 50px #fff,
+      -10px 0 80px #f0f,
+      10px 0 80px #0ff;
+  }
+
+  .hamburger-menu.active {
+    background: mat.get-color-from-palette($fucsia-palette, 500);
+    color: mat.get-color-from-palette($fucsia-palette, A100);
+  }
+
+  .cover-bg {
+    background-image: url("/favicon.ico");
+  }
+
+  .statement h2 {
+    color: mat.get-color-from-palette($fucsia-palette, 500);
+  }
+}
+
+.bg-calm {
+  background: mat.get-color-from-palette($grey-palette, 300);
+  color: mat.get-color-from-palette($grey-palette, 800);
+
+  nav a {
+    color: mat.get-color-from-palette($grey-palette, 800);
+  }
+
+  nav {
+
+    a:hover,
+    a:focus,
+    a:active {
+      color: mat.get-color-from-palette($grey-palette, 900);
+      text-shadow: 5px 5px white;
+      font-size: 18px;
+    }
+  }
+
+  .baloon {
+    box-shadow: none;
+    opacity: 0.2;
+  }
+
+  .hamburger-menu.active {
+    background: mat.get-color-from-palette($grey-palette, 500);
+    color: mat.get-color-from-palette($grey-palette, contrast(600));
+  }
+
+  .cover-bg {
+    background-image: url("/assets/aw_logo.png");
+  }
+
+  .statement {
+    h2:first-child {
+      color: #BE3455;
+    }
+
+    h2:nth-child(2),
+    h2:last-child {
+      color: yellow;
+    }
+  }
+
+}
 
 body,
 html {
@@ -138,38 +273,14 @@ body {
   margin: 0;
   font-family: 'Merriweather Sans', sans-serif;
   font-weight: bold;
-  background-color: #0ff;
+  font-size: 20px;
 }
 
+h1,
 h2,
+h3,
 nav a {
   font-family: "Archivo Black", sans-serif;
-  color: white;
-}
-
-.menu-mobile {
-  display: none;
-
-  @media (max-width: 600px) {
-    display: block;
-  }
-}
-
-a:hover,
-a:focus,
-a:active {
-  color: #BE3455;
-  text-shadow: 5px 5px yellow;
-  font-size: 18px;
-}
-
-.menu-desktop {
-  display: none;
-
-  @media (min-width: 601px) {
-    display: block;
-    padding: 20px 0;
-  }
 }
 
 footer {
@@ -177,10 +288,38 @@ footer {
   bottom: 20px;
   width: 100%;
   text-align: center;
+  font-size: 12px;
+}
+
+.theme-switcher {
+  position: absolute;
+  padding: 20px;
+  top: 0;
+  right: 0;
 }
 
 .bg-logo {
   position: absolute;
   right: 0;
   z-index: -9999999;
+}
+
+.theme-joy .cv-foto {
+  background-image: url("/assets/cv_foto_duo.jpg");
+}
+
+.theme-calm .cv-foto {
+  background-image: url("/assets/cv_foto_bw.jpg");
+}
+
+.text-underline {
+  color: mat.get-color-from-palette($grey-palette, 800);
+  text-decoration: underline;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: mat.get-color-from-palette($grey-palette, 900);
+    text-shadow: none;
+  }
 }
