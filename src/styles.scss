@@ -182,7 +182,8 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
     color: white;
   }
 
-  nav {
+  nav,
+  .contacts-icons {
     a:hover,
     a:focus,
     a:active {
@@ -216,17 +217,27 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
   .statement h2 {
     color: mat.get-color-from-palette($fucsia-palette, 500);
   }
+
+  @media (max-width: 600px) {
+    footer {
+      background-color: mat.get-color-from-palette($tiffany-palette, 200);
+    }
+  }
 }
 
 .bg-calm {
   background: mat.get-color-from-palette($grey-palette, 300);
   color: mat.get-color-from-palette($grey-palette, 800);
 
-  nav a {
-    color: mat.get-color-from-palette($grey-palette, 800);
+  nav,
+  .contacts-icons {
+    a {
+      color: mat.get-color-from-palette($grey-palette, 800);
+    }
   }
 
-  nav {
+  nav,
+  .contacts-icons {
 
     a:hover,
     a:focus,
@@ -262,6 +273,11 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
     }
   }
 
+  @media (max-width: 600px) {
+    footer {
+      background-color: mat.get-color-from-palette($grey-palette, 200);
+    }
+  }
 }
 
 body,
@@ -284,18 +300,27 @@ nav a {
 }
 
 footer {
-  position: absolute;
-  bottom: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
   text-align: center;
   font-size: 12px;
+  padding: 20px;
 }
 
 .theme-switcher {
-  position: absolute;
+  position: fixed;
   padding: 20px;
-  top: 0;
+  top: auto;
+  bottom: 0;
   right: 0;
+  z-index: 999;
+
+  @media (min-width: 601px) {
+    top: 0;
+    bottom: auto;
+  }
 }
 
 .bg-logo {
@@ -321,5 +346,12 @@ footer {
   &:focus {
     color: mat.get-color-from-palette($grey-palette, 900);
     text-shadow: none;
+  }
+}
+
+.section {
+  @media (max-width: 600px) {
+    margin-top: 100px;
+    padding-bottom: 100px;
   }
 }

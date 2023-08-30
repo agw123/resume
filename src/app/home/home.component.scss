@@ -6,6 +6,10 @@
     border-radius: 50%;
     background-position: 0px -5px;
     border: 11px solid palegoldenrod;
+    margin: 0 auto;
+    @media (min-width: 601px) {
+        margin: unset;
+    }
 }
 
 .centered {
@@ -19,7 +23,7 @@
     font-size: 40px;
 }
 
-.baloon {
+.balloon {
     width: 200px;
     height: 200px;
     border-radius: 50%;
