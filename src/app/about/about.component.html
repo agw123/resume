@@ -1,7 +1,7 @@
 <div class="container section">
     <div class="row">
-        <div class="col-12 col-md-7 align-items-center">
-            <h1>Hello, nice to meet you</h1>
+        <div class="col-12 col-lg-7 align-items-center">
+            <h3>Hello, nice to meet you</h3>
             <p> My name is Agata and I love beautiful things and efficiency.<br>
                 I am a Frontend Developer and a Graphic Designer and my goal is to help clients <strong>grow</strong>.
                 To do that I try to <strong>improve</strong> myself constantly.
@@ -9,10 +9,65 @@
                 experiences.<br>
                 Also I am pretty excited about AI!<br>
             </p>
-            <br>To know about my experiences please get my <a class="text-underline" href="./../../assets/agata_wisniewska_resume" target="_blank">resume</a>.
+            <br>To know about my experiences please get my <a class="text-underline"
+                href="./../../assets/agata_wisniewska_resume.pdf" target="_blank">resume</a>.
+                <br><br>
+            <h3>Skills</h3>
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Hard Skills
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Technical abilities
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS/SCSS</li>
+                        <li>Responsive Design</li>
+                        <li>JavaScript/Typescript</li>
+                        <li>Node.js/Express</li>
+                        <li>MongoDB/Mongoose</li>
+                        <li>Angular Framework</li>
+                        <li>Ionic</li>
+                        <li>Bootsrtap/Angular Material</li>
+                        <li>Jquery</li>
+                        <li>ButterCMS</li>
+                        <li>Git</li>
+                        <li>Jira and Agile metodologies</li>
+                        <li>Adobe: Indesign/Illustrator/Photoshop</li>
+                    </ul>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Soft skills
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Personal attributes
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <ul>
+                        <li>Teamwork and peer programming</li>
+                        <li>Ability to work independently</li>
+                        <li>Problem solving</li>
+                        <li>Fast learner</li>
+                        <li>Attention to detail</li>
+                        <li>Great communication skills</li>
+                        <li>Flexibility and adaptability</li>
+                        <li>Self-awareness</li>
+                    </ul>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+
         </div>
-        <div class="col-12 col-md-5 statement">
-            <h2>Share / </h2><h2>Improve</h2>
+        <div class="col-12 col-lg-5 statement">
+            <h2>Share / </h2>
+            <h2>Improve</h2>
             <h2>/ Grow</h2>
         </div>
     </div>

@@ -17,6 +17,9 @@ import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import {CdkMenu, CdkMenuItem, CdkMenuTrigger} from '@angular/cdk/menu';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CdkMenuTrigger, 
     CdkMenu, 
     CdkMenuItem,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

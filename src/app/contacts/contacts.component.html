@@ -1,10 +1,37 @@
 <div class="container section">
     <div class="row">
-        <div class="col-12 col-md-8 ml-auto justify-content-center align-items-center">
-            <h2>It will be nice to hear from you</h2>
-            <p>Feedback. <br>Jobs offers. <br>Friendship. <br>Everything is welcome!</p>
-            <a class="text-underline" href="mailto:agata.w.creative@gmail.com" target="_blank" rel="noopener noreferrer">hello@agataw.dev</a>
+        <div class="col-12 col-lg-6 justify-content-center align-items-center">
+            <div>
+                <h3>It will be nice to hear from you</h3>
+                Feedback. Job offers. Friendship. Everything is welcome!<br>
+                <a class="text-underline" href="mailto:agata.w.creative@gmail.com" target="_blank"
+                    rel="noopener noreferrer">hello@agataw.dev</a>
+            </div>
+            <div class="img-wrapper">
+             <div id="logo_aw"></div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 justify-content-center justify-content-lg-end align-items-center">
+            <mat-card>
+                <h5 class="text-center text">Contact Me</h5>
+                <form #contactForm="ngForm" (ngSubmit)="sendEmail($event)">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" ngModel required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" ngModel required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message" name="message" ngModel required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </mat-card>
         </div>
     </div>
-    <div class="cover-bg"></div>
+    <div class="cover-bg">
+    </div>
 </div>

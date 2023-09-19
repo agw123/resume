@@ -9,7 +9,7 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-$fucsia-palette: (
+$fuchsia-palette: (
   50: #ffe0ff,
   100: #ffb3ff,
   200: #ff80ff,
@@ -141,7 +141,7 @@ $grey-palette: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$resume-primary: mat.define-palette($fucsia-palette);
+$resume-primary: mat.define-palette($fuchsia-palette);
 $resume-accent: mat.define-palette($yellow-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -176,24 +176,30 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
 
 .bg-joy {
   background: mat.get-color-from-palette($tiffany-palette, 500);
-  color: mat.get-color-from-palette($tiffany-palette, A100);
+  color: black;
 
   a {
-    color: white;
+    color: black;
   }
 
   nav,
   .contacts-icons {
+
     a:hover,
     a:focus,
     a:active {
-      color: #BE3455;
+      color: mat.get-color-from-palette($fuchsia-palette, 500);
       text-shadow: 5px 5px yellow;
-      font-size: 18px;
     }
   }
 
-  .baloon {
+  .accent {
+    color: mat.get-color-from-palette($fuchsia-palette, 500);
+    text-shadow: 5px 5px yellow;
+  }
+
+
+  .balloon {
     box-shadow:
       inset 0 0 50px #fff,
       inset 20px 0 80px #f0f,
@@ -206,19 +212,30 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
   }
 
   .hamburger-menu.active {
-    background: mat.get-color-from-palette($fucsia-palette, 500);
-    color: mat.get-color-from-palette($fucsia-palette, A100);
+    background: mat.get-color-from-palette($fuchsia-palette, 500);
+    color: mat.get-color-from-palette($fuchsia-palette, A100);
+  }
+
+  #logo_aw {
+    background-image: url("./assets/logo_aw_joy.png");
   }
 
   .cover-bg {
-    background-image: url("/favicon.ico");
+    background-color: white;
+  }
+
+ .mdc-card {
+    background-color: white;
+    button {
+      background-color: mat.get-color-from-palette($fuchsia-palette, 500);
+    }
   }
 
   .statement h2 {
-    color: mat.get-color-from-palette($fucsia-palette, 500);
+    color: mat.get-color-from-palette($fuchsia-palette, 500);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 991.99px) {
     footer {
       background-color: mat.get-color-from-palette($tiffany-palette, 200);
     }
@@ -244,11 +261,16 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
     a:active {
       color: mat.get-color-from-palette($grey-palette, 900);
       text-shadow: 5px 5px white;
-      font-size: 18px;
+      // font-size: 18px;
     }
   }
 
-  .baloon {
+  .accent {
+    color: #BE3455;
+    text-shadow: 5px 5px #FFE548;
+  }
+
+  .balloon {
     box-shadow: none;
     opacity: 0.2;
   }
@@ -258,8 +280,12 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
     color: mat.get-color-from-palette($grey-palette, contrast(600));
   }
 
+  #logo_aw {
+    background-image: url("./assets/logo_aw_grey.png");
+  }
+
   .cover-bg {
-    background-image: url("/assets/aw_logo.png");
+    background-color: mat.get-color-from-palette($grey-palette, 100);
   }
 
   .statement {
@@ -269,11 +295,11 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
 
     h2:nth-child(2),
     h2:last-child {
-      color: yellow;
+      color: #FFE548;
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 991.99px) {
     footer {
       background-color: mat.get-color-from-palette($grey-palette, 200);
     }
@@ -289,7 +315,6 @@ body {
   margin: 0;
   font-family: 'Merriweather Sans', sans-serif;
   font-weight: bold;
-  font-size: 20px;
 }
 
 h1,
@@ -317,7 +342,7 @@ footer {
   right: 0;
   z-index: 999;
 
-  @media (min-width: 601px) {
+  @media (min-width: 992px) {
     top: 0;
     bottom: auto;
   }
@@ -329,12 +354,23 @@ footer {
   z-index: -9999999;
 }
 
+#logo_aw {
+  background-size: contain;
+  background-position: center;
+  width: 390px;
+  height: 183px;
+  background-repeat: no-repeat;
+
+}
+
 .theme-joy .cv-foto {
-  background-image: url("/assets/cv_foto_duo.jpg");
+  background-image: url("/assets/cv_foto_duo_fuchsia.jpg");
+  border: 11px solid yellow;
 }
 
 .theme-calm .cv-foto {
   background-image: url("/assets/cv_foto_bw.jpg");
+  border: 11px solid palegoldenrod;
 }
 
 .text-underline {
@@ -350,8 +386,37 @@ footer {
 }
 
 .section {
-  @media (max-width: 600px) {
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
+.section {
+  @media (max-width: 991.99px) {
     margin-top: 100px;
     padding-bottom: 100px;
   }
+}
+
+.btn-primary {
+  background-color: #BE3455;
+  border-color: #BE3455;
+
+  &:hover,
+  :active,
+  :focus {
+    background-color: #BE3455;
+    border-color: #BE3455;
+    opacity: 0.4;
+  }
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-primary.dropdown-toggle:focus,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+  background-color: #BE3455;
+  border-color: #BE3455;
+  opacity: 0.4;
 }

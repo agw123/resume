@@ -5,9 +5,8 @@
     height: 200px;
     border-radius: 50%;
     background-position: 0px -5px;
-    border: 11px solid palegoldenrod;
     margin: 0 auto;
-    @media (min-width: 601px) {
+    @media (min-width: 992px) {
         margin: unset;
     }
 }
@@ -18,8 +17,6 @@
 }
 
 .accent {
-    color: #BE3455;
-    text-shadow: 5px 5px yellow;
     font-size: 40px;
 }
 
