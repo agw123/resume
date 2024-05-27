@@ -2,58 +2,104 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .menu-links a {
-        font-size: 20px;
         font-weight: bold;
         padding: 15px;
         text-decoration: none;
     }
 }
 
-.hamburger-menu {
-    display: none;
-}
-
-.hamburger-menu.active {
-    position: absolute;
-    top: 56px;
-    z-index: 999;
+.contacts-icons {
+    position: fixed;
+    z-index: 999999;
+    top: 15px;
+    right: 20px;
     display: flex;
-    flex-direction: column;
-    width: 100vw;
-    padding: 0;
-    margin: 0;
-    left: 0;
+    a {
+        display: flex;
+        width: auto;
+        height: 100%;
 
-    span {
-        padding: 20px;
+        &:first-child {
+            padding-right: 20px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        position: static;
+        display: flex;
+        padding: 20px 0;
     }
 }
 
-.contacts-icons {
-    display: block;
-    margin-bottom: 100px;
-    padding: 20px 0;
+mat-icon {
+    color: white;
+    outline: none;
 
-    mat-icon {
-        margin: 0 10px;
+    @media (min-width: 992px) {
+        color: inherit;
     }
 }
 
 .menu-mobile {
     display: none;
 
-    @media (max-width: 600px) {
+    @media (max-width: 991.99px) {
         display: block;
+
+        mat-toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
     }
 }
 
 .menu-desktop {
     display: none;
 
-    @media (min-width: 601px) {
+    @media (min-width: 992px) {
         display: block;
-        margin-bottom: 100px;
         padding: 20px 0;
     }
+}
+
+button,
+button:hover,
+button:active,
+button:focus {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    background-color: #61625b;
+    width: 100%;
+    top: 20px;
+    padding: 20px;
+}
+
+.cdk-menu-item {
+    color: white;
+    outline: none;
+}
+
+.cdk-menu-group {
+    width: 100vw;
+}
+
+.cdk-menu-item {
+    border: none;
+    text-align: left;
+    padding: 10px;
+}
+
+.cdk-menu-trigger {
+    display: flex;
 }

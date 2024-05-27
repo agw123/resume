@@ -1,0 +1,24 @@
+.mongoose-logo-text {
+    color: #800;
+    font-size: 20px;
+    text-transform: none;
+}
+
+.grid {
+    display: inline-grid;
+    justify-content: end;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 30px;
+
+   &.first {
+    grid-template-columns: 1fr 1fr;
+   }
+
+   &.second {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    img {
+        margin: 10px;
+    }
+   }
+}

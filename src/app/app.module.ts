@@ -12,10 +12,14 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import {CdkMenu, CdkMenuItem, CdkMenuTrigger} from '@angular/cdk/menu';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -24,18 +28,25 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     ProjectsComponent,
     ContactsComponent,
-    MenuComponent
+    MenuComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    CdkMenuTrigger, 
+    CdkMenu, 
+    CdkMenuItem,
+    AppRoutingModule,
+    FormsModule,
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
