@@ -1,6 +1,14 @@
+:host {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+}
+
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
     .menu-links a {
@@ -11,11 +19,8 @@ nav {
 }
 
 .contacts-icons {
-    position: fixed;
-    z-index: 999999;
-    top: 15px;
-    right: 20px;
     display: flex;
+
     a {
         display: flex;
         width: auto;
@@ -34,11 +39,11 @@ nav {
 }
 
 mat-icon {
-    color: white;
+    color: #30312b;
     outline: none;
 
     @media (min-width: 992px) {
-        color: inherit;
+        color: #30312b;
     }
 }
 
@@ -48,9 +53,15 @@ mat-icon {
     @media (max-width: 991.99px) {
         display: block;
 
+        button {
+            margin-right: 0;
+            margin-left: auto;
+            padding: 0;
+        }
+
         mat-toolbar {
             position: fixed;
-            top: 0;
+            top: 63px;
             left: 0;
             z-index: 9999;
         }
@@ -62,7 +73,6 @@ mat-icon {
 
     @media (min-width: 992px) {
         display: block;
-        padding: 20px 0;
     }
 }
 
@@ -79,7 +89,6 @@ button:focus {
 .menu-items {
     display: flex;
     flex-direction: column;
-    background-color: #61625b;
     width: 100%;
     top: 20px;
     padding: 20px;
@@ -88,18 +97,30 @@ button:focus {
 .cdk-menu-item {
     color: white;
     outline: none;
+    border: none;
+    text-align: left;
+    padding: 10px;
 }
 
 .cdk-menu-group {
     width: 100vw;
 }
 
-.cdk-menu-item {
-    border: none;
-    text-align: left;
-    padding: 10px;
-}
-
 .cdk-menu-trigger {
     display: flex;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    padding: 20px 0;
+}
+
+// .mat-toolbar {
+//     background-color: #cecfc7;
+// }
+
+@media (min-width: 991.99px) {
+    .mat-toolbar.mat-primary {
+        background-color: transparent;
+    }
 }

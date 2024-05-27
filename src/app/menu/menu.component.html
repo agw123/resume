@@ -1,32 +1,51 @@
-<div class="container d-flex justify-content-between align-items-center">
-  <span class="contacts-icons">
-    <a href="https://www.linkedin.com/in/agata-wisniewska-902b95138/" target="_blank"><mat-icon
-        svgIcon="linkedin"></mat-icon></a>
-    <a href="https://github.com/agw123" target="_blank"><mat-icon svgIcon="github"></mat-icon></a>
-  </span>
-  <div class="row menu-desktop">
-    <div class="ml-auto text-right">
-      <nav>
-        <span class="menu-links">
-          <a routerLink="/home">Home</a>
-          <a routerLink="/about">About</a>
-          <a routerLink="/projects">Projects</a>
-          <a routerLink="/contact">Contact</a>
-        </span>
-      </nav>
+<div class="heading-title">
+  <div class="container">
+    <div class="row d-flex justify-content-between align-items-center">
+      <div class="col">
+        <h1>Agata Wisniewska Frontend Developer</h1>
+      </div>
+      <div class="col text-right"><img class="theme-switcher" (click)="themeSwitcher()" src="{{iconSrc}}"
+          alt="theme-switcher">
+      </div>
     </div>
   </div>
-  <div class="row menu-mobile">
-    <mat-toolbar color="primary" class="justify-content-between align-items-center">
-      <button [cdkMenuTriggerFor]="menu" class="menu-trigger"><mat-icon>menu</mat-icon></button>
-      <ng-template #menu>
-        <div class="menu-items" cdkMenu>
-          <button class="menu-item" cdkMenuItem routerLink="/home">Home</button>
-          <button class="menu-item" cdkMenuItem routerLink="/about">About</button>
-          <button class="menu-item" cdkMenuItem routerLink="/projects">Projects</button>
-          <button class="menu-item" cdkMenuItem routerLink="/contact">Contact</button>
-        </div>
-      </ng-template>
-    </mat-toolbar>
-  </div>
 </div>
+<!-- [ngStyle]="{'background-color': scrolled ? 'pink' : 'transparent'}" -->
+<mat-toolbar color="primary" class="justify-content-between align-items-center" [@scrollDown]="scrolled ? true : false">
+  <div class="container">
+    <div class="row d-flex justify-content-between align-items-center">
+      <div class="col d-flex">
+        <a class="mr-3" href="https://www.linkedin.com/in/agata-wisniewska-902b95138/" target="_blank"><span
+            aria-hidden="true"><mat-icon svgIcon="linkedin"></mat-icon></span>
+          <span class="sr-only">Agata Wisniewska's LinkedIn Profile</span></a>
+        <a href="https://github.com/agw123" target="_blank">
+          <span aria-hidden="true">
+            <mat-icon svgIcon="github"></mat-icon>
+          </span><span class="sr-only">Agata Wisniewska's Github Profile</span></a>
+      </div>
+      <div class="menu-mobile col">
+        <button [cdkMenuTriggerFor]="menu" class="menu-trigger"><mat-icon>menu</mat-icon></button>
+        <ng-template #menu>
+          <div class="menu-items" cdkMenu>
+            <button class="menu-item" cdkMenuItem routerLink="/home">Home</button>
+            <button class="menu-item" cdkMenuItem routerLink="/about">About</button>
+            <button class="menu-item" cdkMenuItem routerLink="/projects">Projects</button>
+            <button class="menu-item" cdkMenuItem routerLink="/contact">Contact</button>
+          </div>
+        </ng-template>
+      </div>
+      <div class="menu-desktop col ml-auto">
+        <div class="ml-auto text-right">
+          <nav>
+            <span class="menu-links">
+              <a routerLink="/home">Home</a>
+              <a routerLink="/about">About</a>
+              <a routerLink="/projects">Projects</a>
+              <a routerLink="/contact">Contact</a>
+            </span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
