@@ -6,6 +6,7 @@
     border-radius: 50%;
     background-position: 0px -5px;
     margin: 0 auto;
+
     @media (min-width: 992px) {
         margin: unset;
     }
@@ -20,166 +21,222 @@
     font-size: 40px;
 }
 
-.balloon {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: absolute;
-    z-index: -999999;
-    overflow: hidden;
+// .balloon {
+//     width: 200px;
+//     height: 200px;
+//     border-radius: 50%;
+//     position: absolute;
+//     z-index: -999999;
+//     overflow: hidden;
+// }
+
+// .first1 {
+//     animation: first linear 11s infinite alternate;
+// }
+
+// .second2 {
+//     animation: second linear 21s infinite alternate;
+// }
+
+// .third3 {
+//     animation: third linear 9s infinite alternate;
+// }
+
+// .fourth4 {
+//     animation: fourth linear 14s infinite alternate;
+// }
+
+// .fifth5 {
+//     animation: fifth linear 17s infinite alternate;
+// }
+
+// .sixth6 {
+//     animation: sixth linear 16s infinite alternate;
+// }
+
+
+// @keyframes first {
+//     0% {
+//         background-color: #BE3455;
+//         right: 50vw;
+//         bottom: 0;
+//     }
+
+//     50% {
+//         background-color: yellow;
+//         right: 50vw;
+//         bottom: 70vh;
+//     }
+
+
+//     100% {
+//         background-color: yellow;
+//         opacity: 0.3;
+//         right: 50vw;
+//         bottom: 0;
+//     }
+// }
+
+
+// @keyframes second {
+//     0% {
+//         background-color: #BE3455;
+//         right: 30vw;
+//         bottom: 0;
+//     }
+
+//     50% {
+//         background-color: #BE3455;
+//         right: 30vw;
+//         bottom: 70vh;
+//     }
+
+//     100% {
+//         background-color: yellow;
+//         opacity: 0.1;
+//         right: 30vw;
+//         bottom: 0;
+//     }
+// }
+
+// @keyframes third {
+//     0% {
+//         background-color: #BE3455;
+//         opacity: 0.4;
+//         right: 10vw;
+//         bottom: 0;
+//     }
+
+//     50% {
+//         background-color: yellow;
+//         right: 10vw;
+//         bottom: 65vh;
+//     }
+
+//     100% {
+//         background-color: yellow;
+//         right: 10vw;
+//         bottom: 0;
+//     }
+// }
+
+// @keyframes fourth {
+//     0% {
+//         background-color: #BE3455;
+//         right: 25vw;
+//         bottom: 0;
+//     }
+
+//     50% {
+//         background-color: #BE3455;
+//         opacity: 0.7;
+//         right: 25vw;
+//         bottom: 70vh;
+//     }
+
+
+//     100% {
+//         background-color: orange;
+//         right: 25vw;
+//         bottom: 0;
+//     }
+// }
+
+
+// @keyframes fifth {
+//     0% {
+//         background-color: #BE3455;
+//         right: 43vw;
+//         bottom: 0;
+//     }
+
+//     50% {
+//         background-color: yellow;
+//         right: 43vw;
+//         bottom: 60vh;
+//     }
+
+//     100% {
+//         background-color: yellow;
+//         opacity: 0.4;
+//         right: 43vw;
+//         bottom: 0;
+//     }
+// }
+
+// @keyframes sixth {
+//     0% {
+//         background-color: #BE3455;
+//         opacity: 0.1;
+//         right: 3vw;
+//         bottom: 0;
+//     }
+
+//     50% {
+//         background-color: yellow;
+//         right: 3vw;
+//         bottom: 70vh;
+//     }
+
+//     100% {
+//         background-color: #BE3455;
+//         right: 3vw;
+//         bottom: 0;
+//     }
+// }
+
+
+$balloon-size: 200px;
+
+@mixin balloon($right0, $bottom0, $background0, $right50, $bottom50, $background50, $right100, $bottom100, $background100, $opacity100, $duration) {
+  width: $balloon-size;
+  height: $balloon-size;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -999999;
+  overflow: hidden;
+  animation: balloonAnimation $duration infinite alternate;
+
+  @keyframes balloonAnimation {
+    0% {
+      background-color: $background0;
+      right: $right0;
+      bottom: $bottom0;
+    }
+    50% {
+      background-color: $background50;
+      right: $right50;
+      bottom: $bottom50;
+    }
+    100% {
+      background-color: $background100;
+      right: $right100;
+      bottom: $bottom100;
+      opacity: $opacity100;
+    }
+  }
 }
 
 .first1 {
-    animation: first linear 11s infinite alternate;
+  @include balloon(50vw, 0, #BE3455, 50vw, 70vh, yellow, 50vw, 0, yellow, 0.3, 11s);
 }
 
 .second2 {
-    animation: second linear 21s infinite alternate;
+  @include balloon(30vw, 0, #BE3455, 30vw, 70vh, yellow, 30vw, 0, yellow, 0.1, 21s);
 }
 
 .third3 {
-    animation: third linear 9s infinite alternate;
+  @include balloon(10vw, 0, #BE3455, 10vw, 65vh, yellow, 10vw, 0, yellow, 0.4, 9s);
 }
 
 .fourth4 {
-    animation: fourth linear 14s infinite alternate;
+  @include balloon(25vw, 0, #BE3455, 25vw, 70vh, orange, 25vw, 0, orange, 0.7, 14s);
 }
 
 .fifth5 {
-    animation: fifth linear 17s infinite alternate;
+  @include balloon(43vw, 0, #BE3455, 43vw, 60vh, yellow, 43vw, 0, yellow, 0.4, 17s);
 }
 
 .sixth6 {
-    animation: sixth linear 16s infinite alternate;
-}
-
-
-@keyframes first {
-    0% {
-        background-color: #BE3455;
-        right: 50vw;
-        bottom: 0;
-    }
-
-    50% {
-        background-color: yellow;
-        right: 50vw;
-        bottom: 70vh;
-    }
-
-
-    100% {
-        background-color: yellow;
-        opacity: 0.3;
-        right: 50vw;
-        bottom: 0;
-    }
-}
-
-
-@keyframes second {
-    0% {
-        background-color: #BE3455;
-        right: 30vw;
-        bottom: 0;
-    }
-
-    50% {
-        background-color: #BE3455;
-        right: 30vw;
-        bottom: 70vh;
-    }
-
-    100% {
-        background-color: yellow;
-        opacity: 0.1;
-        right: 30vw;
-        bottom: 0;
-    }
-}
-
-@keyframes third {
-    0% {
-        background-color: #BE3455;
-        opacity: 0.4;
-        right: 10vw;
-        bottom: 0;
-    }
-
-    50% {
-        background-color: yellow;
-        right: 10vw;
-        bottom: 65vh;
-    }
-
-    100% {
-        background-color: yellow;
-        right: 10vw;
-        bottom: 0;
-    }
-}
-
-@keyframes fourth {
-    0% {
-        background-color: #BE3455;
-        right: 25vw;
-        bottom: 0;
-    }
-
-    50% {
-        background-color: #BE3455;
-        opacity: 0.7;
-        right: 25vw;
-        bottom: 70vh;
-    }
-
-
-    100% {
-        background-color: orange;
-        right: 25vw;
-        bottom: 0;
-    }
-}
-
-
-@keyframes fifth {
-    0% {
-        background-color: #BE3455;
-        right: 43vw;
-        bottom: 0;
-    }
-
-    50% {
-        background-color: yellow;
-        right: 43vw;
-        bottom: 60vh;
-    }
-
-    100% {
-        background-color: yellow;
-        opacity: 0.4;
-        right: 43vw;
-        bottom: 0;
-    }
-}
-
-@keyframes sixth {
-    0% {
-        background-color: #BE3455;
-        opacity: 0.1;
-        right: 3vw;
-        bottom: 0;
-    }
-
-    50% {
-        background-color: yellow;
-        right: 3vw;
-        bottom: 70vh;
-    }
-
-    100% {
-        background-color: #BE3455;
-        right: 3vw;
-        bottom: 0;
-    }
+  @include balloon(3vw, 0, #BE3455, 3vw, 70vh, #BE3455, 3vw, 0, #BE3455, 0.1, 16s);
 }

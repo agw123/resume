@@ -1,6 +1,6 @@
 .cover-bg {
     position: absolute;
-    height: 67%;
+    height: 48%;
     width: 100%;
     top: 0;
     left: 0;
@@ -44,29 +44,34 @@ mat-card {
     }
 }
 
-.img-wrapper {
-    margin: 20px auto;
+.logo-wrapper {
     text-align: center;
     display: flex;
-    height: 25%;
+    font-family: 'Archivo Black';
+    font-size: 120px;
+    justify-content: center;
+
+    span:first-child {
+        margin-right: -34px;
+        position: relative;
+    }
 
     @media (min-width: 992px) {
-        height: 100%;
-        width: 100%;
-        justify-content: center;
         align-items: center;
         margin: 0;
-    }
+        font-size: 250px;
 
-    img {
-        max-width: 390px;
-        max-height: 183px;
-        margin: 0 auto;
-        margin-top: 20px;
-        justify-content: center;
-        
-        @media (min-width: 992px) {
-            margin-top: 0;
+        span:first-child {
+            margin-right: -65px;
+            position: relative;
         }
     }
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+small {
+    color: red;
 }

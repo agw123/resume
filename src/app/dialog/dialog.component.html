@@ -1,0 +1,13 @@
+<div class="dialog-wrapper">
+    <div *ngIf="data.status === 200">
+        <h5>Message send successfully</h5>
+        Dear {{data.name}}, thank you for reaching out! <br> I'll reply as soon
+        as I can. <br>
+        Have a nice day!
+    </div>
+    <div *ngIf="data.status !== 200">
+        <h5>Ooops something went wrong...</h5>
+        <p>Please try later!</p>
+    </div>
+    <button class="btn btn-secondary" (click)="dialogRef.close()">Close</button>
+</div>

@@ -165,11 +165,11 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
 // that you are using.
 
 .theme-joy {
-  @include mat.all-component-themes($joy-theme);
+  @include mat.all-component-colors($joy-theme);
 }
 
 .theme-calm {
-  @include mat.all-component-themes($calm-theme);
+  @include mat.all-component-colors($calm-theme);
 }
 
 /* You can add global styles to this file, and also import other style files */
@@ -178,20 +178,29 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
   background: mat.get-color-from-palette($tiffany-palette, 500);
   color: black;
 
+  .heading-title {
+    background: black;
+    color: mat.get-color-from-palette($tiffany-palette, 500)
+  }
+
+  .cv-foto {
+    background-image: url("/assets/cv_foto_duo_fuchsia.jpg");
+    border: 11px solid yellow;
+  }
+
   a {
     color: black;
   }
 
-  nav,
-  .contacts-icons {
-
+  .mat-toolbar {
     a:hover,
     a:focus,
     a:active {
-      color: mat.get-color-from-palette($fuchsia-palette, 500);
-      text-shadow: 5px 5px yellow;
+      color: yellow;
+      text-shadow: 5px 5px black;
     }
   }
+
 
   .accent {
     color: mat.get-color-from-palette($fuchsia-palette, 500);
@@ -211,21 +220,28 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
       10px 0 80px #0ff;
   }
 
-  .hamburger-menu.active {
-    background: mat.get-color-from-palette($fuchsia-palette, 500);
-    color: mat.get-color-from-palette($fuchsia-palette, A100);
+  .logo-wrapper {
+    span:first-child {
+      color: mat.get-color-from-palette($fuchsia-palette, 500);
+    }
+
+    span:last-child {
+      color: yellow;
+    }
   }
 
-  #logo_aw {
-    background-image: url("./assets/logo_aw_joy.png");
+  .menu-items,
+  .menu-item {
+    background-color: mat.get-color-from-palette($fuchsia-palette, 400);
   }
 
   .cover-bg {
     background-color: white;
   }
 
- .mdc-card {
+  .mdc-card {
     background-color: white;
+
     button {
       background-color: mat.get-color-from-palette($fuchsia-palette, 500);
     }
@@ -243,8 +259,19 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
 }
 
 .bg-calm {
-  background: mat.get-color-from-palette($grey-palette, 300);
+  // background: mat.get-color-from-palette($grey-palette, 300);
+  background-color: #edede9;
   color: mat.get-color-from-palette($grey-palette, 800);
+
+  .heading-title {
+    background: mat.get-color-from-palette($grey-palette, 800);
+    color: mat.get-color-from-palette($grey-palette, 300);
+  }
+
+  .cv-foto {
+    background-image: url("/assets/cv_foto_bw.jpg");
+    border: 11px solid palegoldenrod;
+  }
 
   nav,
   .contacts-icons {
@@ -275,13 +302,19 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
     opacity: 0.2;
   }
 
-  .hamburger-menu.active {
-    background: mat.get-color-from-palette($grey-palette, 500);
-    color: mat.get-color-from-palette($grey-palette, contrast(600));
+  .logo-wrapper {
+    span:first-child {
+      color: #BE3455;
+    }
+
+    span:last-child {
+      color: #FFE548;
+    }
   }
 
-  #logo_aw {
-    background-image: url("./assets/logo_aw_grey.png");
+  .menu-items,
+  .menu-item {
+    background-color: mat.get-color-from-palette($grey-palette, 400);
   }
 
   .cover-bg {
@@ -301,7 +334,8 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
 
   @media (max-width: 991.99px) {
     footer {
-      background-color: mat.get-color-from-palette($grey-palette, 200);
+      // background-color: mat.get-color-from-palette($grey-palette, 200);
+      background-color: #edede9;
     }
   }
 }
@@ -320,8 +354,18 @@ body {
 h1,
 h2,
 h3,
+h5,
 nav a {
   font-family: "Archivo Black", sans-serif;
+}
+
+
+h1 {
+  color: #edede9;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 20px 0;
+  margin: 0;
 }
 
 footer {
@@ -332,20 +376,6 @@ footer {
   text-align: center;
   font-size: 12px;
   padding: 20px;
-}
-
-.theme-switcher {
-  position: fixed;
-  padding: 20px;
-  top: auto;
-  bottom: 0;
-  right: 0;
-  z-index: 999;
-
-  @media (min-width: 992px) {
-    top: 0;
-    bottom: auto;
-  }
 }
 
 .bg-logo {
@@ -363,16 +393,6 @@ footer {
 
 }
 
-.theme-joy .cv-foto {
-  background-image: url("/assets/cv_foto_duo_fuchsia.jpg");
-  border: 11px solid yellow;
-}
-
-.theme-calm .cv-foto {
-  background-image: url("/assets/cv_foto_bw.jpg");
-  border: 11px solid palegoldenrod;
-}
-
 .text-underline {
   color: mat.get-color-from-palette($grey-palette, 800);
   text-decoration: underline;
@@ -386,15 +406,12 @@ footer {
 }
 
 .section {
-  margin-top: 50px;
+  margin-top: 150px;
   padding-bottom: 100px;
 }
 
-.section {
-  @media (max-width: 991.99px) {
-    margin-top: 100px;
-    padding-bottom: 100px;
-  }
+button {
+  border-radius: 0 !important;
 }
 
 .btn-primary {
@@ -415,7 +432,8 @@ footer {
 .show>.btn-primary.dropdown-toggle:focus,
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
-.show>.btn-primary.dropdown-toggle {
+.show>.btn-primary.dropdown-toggle,
+.btn-primary:disabled {
   background-color: #BE3455;
   border-color: #BE3455;
   opacity: 0.4;

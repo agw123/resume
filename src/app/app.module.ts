@@ -15,11 +15,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
-import {CdkMenu, CdkMenuItem, CdkMenuTrigger} from '@angular/cdk/menu';
+import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ProjectsComponent,
     ContactsComponent,
     MenuComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -40,13 +43,14 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatIconModule,
     MatMenuModule,
     HttpClientModule,
-    CdkMenuTrigger, 
-    CdkMenu, 
+    CdkMenuTrigger,
+    CdkMenu,
     CdkMenuItem,
     AppRoutingModule,
     FormsModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
