@@ -22,6 +22,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { DialogComponent } from './dialog/dialog.component';
     ContactsComponent,
     MenuComponent,
     PageNotFoundComponent,
-    DialogComponent
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,9 +51,10 @@ import { DialogComponent } from './dialog/dialog.component';
     FormsModule,
     MatCardModule,
     MatExpansionModule,
-    MatDialogModule
+    MatDialogModule,
+    MatChipsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

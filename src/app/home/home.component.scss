@@ -185,19 +185,23 @@
 //     }
 // }
 
+.balloon {
+  position: absolute;
+}
+
 
 $balloon-size: 200px;
 
-@mixin balloon($right0, $bottom0, $background0, $right50, $bottom50, $background50, $right100, $bottom100, $background100, $opacity100, $duration) {
+@mixin balloon($right0, $bottom0, $background0, $right50, $bottom50, $background50, $right100, $bottom100, $background100, $opacity100, $duration, $animation-name) {
   width: $balloon-size;
   height: $balloon-size;
   border-radius: 50%;
   position: absolute;
   z-index: -999999;
   overflow: hidden;
-  animation: balloonAnimation $duration infinite alternate;
+  animation: #{$animation-name} $duration infinite alternate;
 
-  @keyframes balloonAnimation {
+  @keyframes #{$animation-name} {
     0% {
       background-color: $background0;
       right: $right0;
@@ -218,25 +222,25 @@ $balloon-size: 200px;
 }
 
 .first1 {
-  @include balloon(50vw, 0, #BE3455, 50vw, 70vh, yellow, 50vw, 0, yellow, 0.3, 11s);
+  @include balloon(50vw, 0, #BE3455, 50vw, 70vh, yellow, 50vw, 0, yellow, 0.3, 11s, balloonAnimation1);
 }
 
 .second2 {
-  @include balloon(30vw, 0, #BE3455, 30vw, 70vh, yellow, 30vw, 0, yellow, 0.1, 21s);
+  @include balloon(30vw, 0, #BE3455, 30vw, 70vh, blue, 30vw, 0, yellow, 0.1, 21s, balloonAnimation2);
 }
 
 .third3 {
-  @include balloon(10vw, 0, #BE3455, 10vw, 65vh, yellow, 10vw, 0, yellow, 0.4, 9s);
+  @include balloon(10vw, 0, #BE3455, 10vw, 65vh, green, 10vw, 0, yellow, 0.4, 9s, balloonAnimation3);
 }
 
 .fourth4 {
-  @include balloon(25vw, 0, #BE3455, 25vw, 70vh, orange, 25vw, 0, orange, 0.7, 14s);
+  @include balloon(25vw, 0, #BE3455, 25vw, 70vh, orange, 25vw, 0, orange, 0.7, 14s, balloonAnimation4);
 }
 
 .fifth5 {
-  @include balloon(43vw, 0, #BE3455, 43vw, 60vh, yellow, 43vw, 0, yellow, 0.4, 17s);
+  @include balloon(43vw, 0, #BE3455, 43vw, 60vh, purple, 43vw, 0, yellow, 0.4, 17s, balloonAnimation5);
 }
 
 .sixth6 {
-  @include balloon(3vw, 0, #BE3455, 3vw, 70vh, #BE3455, 3vw, 0, #BE3455, 0.1, 16s);
+  @include balloon(3vw, 0, #BE3455, 3vw, 70vh, cyan, 3vw, 0, yellow, 0.1, 16s, balloonAnimation6);
 }

@@ -3,3 +3,71 @@ h2 {
     font-size: 70px;
     text-align: right;
 }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .skills-section {
+    padding: 20px;
+    border: 3px solid #333;
+    border-radius: 8px;
+  }
+  
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .skill-card {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .skill-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .skill-card ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skill-card ul li {
+    padding: 8px 0;
+  }
+  
+  .text-underline {
+    text-decoration: underline;
+  }
+  
+  .statement {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .statement-text {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .statement-text {
+      font-size: 2;
+      line-height: 1.2;
+    }
+}

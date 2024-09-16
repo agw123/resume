@@ -1,74 +1,68 @@
 <div class="container section">
-    <div class="row">
-        <div class="col-12 col-lg-7 align-items-center">
-            <h3>Hello, nice to meet you</h3>
-            <p> My name is Agata and I love beautiful things and efficiency.<br>
-                I am a Frontend Developer and a Graphic Designer and my goal is to help clients <strong>grow</strong>.
-                To do that I try to <strong>improve</strong> myself constantly.
-                I strongly believe the best way to improve oneself is to <strong>share</strong> knowledge and
-                experiences.<br>
-                Also I am pretty excited about AI!<br>
-            </p>
-            <br>To know about my experiences please get my <a class="text-underline"
-                href="./../../assets/agata_wisniewska_resume.pdf" target="_blank">resume</a>.
-                <br><br>
-            <h3>Skills</h3>
-            <mat-accordion>
-                <mat-expansion-panel>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            Hard skills
-                        </mat-panel-title>
-                        <mat-panel-description>
-                            Technical abilities
-                        </mat-panel-description>
-                    </mat-expansion-panel-header>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS/SCSS</li>
-                        <li>Responsive Design</li>
-                        <li>JavaScript/Typescript</li>
-                        <li>Node.js/Express</li>
-                        <li>MongoDB/Mongoose</li>
-                        <li>Angular Framework</li>
-                        <li>Ionic</li>
-                        <li>Bootstrap/Angular Material</li>
-                        <li>Jquery</li>
-                        <li>ButterCMS</li>
-                        <li>Git</li>
-                        <li>Jira and Agile methodologies</li>
-                        <li>Adobe: Indesign/Illustrator/Photoshop</li>
-                    </ul>
-                </mat-expansion-panel>
-
-                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            Soft skills
-                        </mat-panel-title>
-                        <mat-panel-description>
-                            Personal attributes
-                        </mat-panel-description>
-                    </mat-expansion-panel-header>
-                    <ul>
-                        <li>Teamwork and peer programming</li>
-                        <li>Ability to work independently</li>
-                        <li>Problem solving</li>
-                        <li>Fast learner</li>
-                        <li>Attention to detail</li>
-                        <li>Great communication skills</li>
-                        <li>Flexibility and adaptability</li>
-                        <li>Self-awareness</li>
-                    </ul>
-                </mat-expansion-panel>
-            </mat-accordion>
-
-
-        </div>
-        <div class="col-12 col-lg-5 statement">
-            <h2>Share / </h2>
-            <h2>Improve</h2>
-            <h2>/ Grow</h2>
-        </div>
+  <div class="row">
+        <!-- Introduction Section -->
+        <div class="col-12 col-lg-7 d-flex flex-column align-items-start">
+            <div class="intro-text pr-4">
+              <h3 class="section-title">Hello, nice to meet you</h3>
+              <p>
+                My name is Agata and I have a passion for both beautiful design and
+                efficient solutions. As a Web Developer, my goal is to help clients
+                <strong>grow</strong>. My stack is:
+                <strong class="accent"> Angular and Java</strong> - I invite you do exlpore my <a href="https://github.com/agw123" target="_blank"></a> to have grasp of
+                my coding skills. I am committed to
+                <strong color="">improving</strong> myself continuously and believe
+                that sharing knowledge and experiences is the best way to enhance
+                one’s skills. I'm also very excited about the possibilities of AI!
+              </p>
+              <p>
+                To learn more about my experiences, please download my
+                <a
+                  class="text-underline"
+                  href="./../../assets/agata_wisniewska_resume.pdf"
+                  target="_blank"
+                  >resume</a
+                >.
+              </p>
+              <!-- Visual Statement Section -->
+              <div
+                class="d-flex flex-column align-items-center justify-content-center statement"
+              >
+                <h2 class="statement-text">
+                  Share / <br />
+                  Improve <br />
+                  / Grow
+                </h2>
+              </div>
+            </div>
+          </div>
+    <!-- Skills Section -->
+    <div class="skills-section col-12 col-lg-5">
+      <div class="skills-container">
+        <mat-card class="skills-card">
+          <mat-card-header>
+            <mat-card-title
+              ><h3 class="section-title">Hard Skills</h3></mat-card-title
+            >
+          </mat-card-header>
+          <mat-card-content>
+            <mat-chip-listbox class="mat-mdc-chip-set-stacked">
+              <mat-chip *ngFor="let skill of hardSkills">{{ skill }}</mat-chip>
+            </mat-chip-listbox>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="skills-card">
+          <mat-card-header>
+            <mat-card-title
+              ><h3 class="section-title">Soft Skills</h3></mat-card-title
+            >
+          </mat-card-header>
+          <mat-card-content>
+            <mat-chip-listbox class="mat-mdc-chip-set-stacked">
+              <mat-chip *ngFor="let skill of softSkills">{{ skill }}</mat-chip>
+            </mat-chip-listbox>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
+  </div>
 </div>
