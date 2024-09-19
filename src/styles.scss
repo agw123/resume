@@ -256,6 +256,11 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
       background-color: mat.get-color-from-palette($tiffany-palette, 200);
     }
   }
+
+  footer.overflow-bg {
+    background-color: black;
+    color: white;
+  }
 }
 
 .bg-calm {
@@ -332,6 +337,10 @@ $calm-theme: mat.define-dark-theme((color: (primary: $calm-primary,
     }
   }
 
+  footer.overflow-bg {
+    background-color: rgb(227, 213, 202);
+  }
+
   @media (max-width: 991.99px) {
     footer {
       // background-color: mat.get-color-from-palette($grey-palette, 200);
@@ -375,7 +384,7 @@ footer {
   width: 100%;
   text-align: center;
   font-size: 12px;
-  padding: 20px;
+  padding: 5px;
 }
 
 .bg-logo {
