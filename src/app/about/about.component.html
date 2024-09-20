@@ -2,38 +2,16 @@
   <div class="row">
         <!-- Introduction Section -->
         <div class="col-12 col-lg-7 d-flex flex-column align-items-start">
-            <div class="intro-text pr-4">
-              <h3 class="section-title">Hello, nice to meet you</h3>
-              <p>
-                My name is Agata and I have a passion for both beautiful design and
-                efficient solutions. As a Web Developer, my goal is to help clients
-                <strong>grow</strong>. My stack is:
-                <strong class="accent"> Angular and Java</strong> - I invite you do exlpore my <a href="https://github.com/agw123" target="_blank"></a> to have grasp of
-                my coding skills. I am committed to
-                <strong color="">improving</strong> myself continuously and believe
-                that sharing knowledge and experiences is the best way to enhance
-                one’s skills. I'm also very excited about the possibilities of AI!
-              </p>
-              <p>
-                To learn more about my experiences, please download my
-                <a
-                  class="text-underline"
-                  href="./../../assets/agata_wisniewska_resume.pdf"
-                  target="_blank"
-                  >resume</a
-                >.
-              </p>
-              <!-- Visual Statement Section -->
-              <div
-                class="d-flex flex-column align-items-center justify-content-center statement"
-              >
-                <h2 class="statement-text">
-                  Share / <br />
-                  Improve <br />
-                  / Grow
-                </h2>
-              </div>
+          <div class="">
+            <div class="intro-text">
+              <div [innerHTML]="labels.about.intro"></div>
+              <div [innerHTML]="labels.about.resume"></div>
             </div>
+            <div class="d-flex flex-column align-items-center justify-content-center statement">
+              <div [innerHTML]="labels.about.statement"></div>
+            </div>
+          </div>
+          
           </div>
     <!-- Skills Section -->
     <div class="skills-section col-12 col-lg-5">

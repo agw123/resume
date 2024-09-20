@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MatChipsModule} from '@angular/material/chips';
+import { labels } from '../labels';
 
 @Component({
   selector: 'app-about',
@@ -8,6 +9,8 @@ import {MatChipsModule} from '@angular/material/chips';
 })
 export class AboutComponent {
   panelOpenState = false;
+  labels = labels;
+  
   hardSkills: string[] = ['JAVA', 'J2EE', 'Spring/Spring Boot', 'SQL & MySQL/PostgreSQL', 'Angular Framework',
     'JavaScript/TypeScript',
     'HTML', 'CSS/SCSS',

@@ -3,6 +3,7 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { NgForm } from '@angular/forms';
+import { labels } from '../labels';
 
 const SERVICE_ID = "service_drmnp1a"; 
 const TEMPLATE_ID = "template_u7ezg7m"; 
@@ -15,6 +16,7 @@ const PUBLIC_KEY = "PdDYBKI1Yw6QG3ged";
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent {
+  labels = labels;
 
   constructor(public dialog: MatDialog) {
   }

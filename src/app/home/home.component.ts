@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { labels } from '../labels';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  labels = labels;
   mouseX = 0;
   mouseY = 0;
   positions: {
