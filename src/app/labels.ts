@@ -10,7 +10,7 @@ export const labels = {
         <p>My stack is <strong class="accent">Angular and Java</strong>.</p>
         <p>I invite you to explore my <a href="https://github.com/agw123" target="_blank">GitHub</a> to have a grasp of my coding skills.</p>`,
       resume: `<p>To learn more about my experiences, please download my 
-        <a href="./../../assets/Agata_Wisniewska_CV_2024.pdf.pdf" target="_blank">resume</a>.</p>`,
+        <a href="./../assets/Agata_Wisniewska_CV_2024.pdf" target="_blank">resume</a>.</p>`,
       statement: `<h2 class="statement-text">Share / <br />Improve <br /> / Grow</h2>`,
     },
   
